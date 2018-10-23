@@ -8,116 +8,256 @@ var svg = d3.select("svg"),
 
 // Set data
 var mapdata = {
-    floors: [{
-        id: uuid(),
-        name: "Floor 1",
-        image: {
-            url: "images/sample_floorplan.png",
+   floors: [
+      {
+         id: "29dd9fe8-27b6-409a-8971-a5974b1490ab",
+         name: "Floor 1",
+         image: {
+            url: "images/BLD36-FloorPlan_v3_outline.png",
             x: 0,
             y: 0,
-            w: width,
-            h: height
-        },
-        zones: [
+            w: 960,
+            h: 500
+         },
+         zones: [
             {
-                id: uuid(),
-                name: "ZONE - 0",
-                points: [
-                    [
-                        147,
-                        117
-                    ],
-                    [
-                        147,
-                        268
-                    ],
-                    [
-                        368,
-                        268
-                    ],
-                    [
-                        369,
-                        148
-                    ],
-                    [
-                        353,
-                        149
-                    ],
-                    [
-                        353,
-                        82
-                    ],
-                    [
-                        316,
-                        32
-                    ],
-                    [
-                        233,
-                        32
-                    ],
-                    [
-                        201,
-                        79
-                    ],
-                    [
-                        199,
-                        117
-                    ]
-                ]
+               id: "772bb692-c84e-47c7-98d2-cdc35639ba54",
+               name: "OP-10",
+               points: [
+                  [
+                     261,
+                     232
+                  ],
+                  [
+                     313,
+                     232
+                  ],
+                  [
+                     313,
+                     284
+                  ],
+                  [
+                     261,
+                     284
+                  ]
+               ]
             },
             {
-                id: uuid(),
-                name: "ZONE - 1",
-                points: [
-                    [
-                        581,
-                        326
-                    ],
-                    [
-                        582,
-                        475
-                    ],
-                    [
-                        784,
-                        474
-                    ],
-                    [
-                        784,
-                        325
-                    ]
-                ]
+               id: "e98439ee-ba4a-4a39-865c-09db0badf045",
+               name: "OP-20",
+               points: [
+                  [
+                     375,
+                     227
+                  ],
+                  [
+                     428,
+                     227
+                  ],
+                  [
+                     428,
+                     281
+                  ],
+                  [
+                     375,
+                     281
+                  ]
+               ]
+            },
+            {
+               id: "53e86fca-ea98-490c-aca1-5747d7cbc9f7",
+               name: "OP-30",
+               points: [
+                  [
+                     453,
+                     227
+                  ],
+                  [
+                     506,
+                     227
+                  ],
+                  [
+                     506,
+                     283
+                  ],
+                  [
+                     453,
+                     283
+                  ]
+               ]
+            },
+            {
+               id: "3e2dca8f-d64a-48f2-b525-30184a183323",
+               name: "OP-70",
+               points: [
+                  [
+                     532,
+                     228
+                  ],
+                  [
+                     586,
+                     228
+                  ],
+                  [
+                     586,
+                     281
+                  ],
+                  [
+                     532,
+                     282
+                  ]
+               ]
+            },
+            {
+               id: "1be2359c-e67b-423e-ae92-a6ed2125a065",
+               name: "ZONE - 8adf948e-a855-463b-b1a5-1eb10519675b",
+               points: [
+                  [
+                     378,
+                     325.09375
+                  ],
+                  [
+                     431,
+                     328.09375
+                  ]
+               ]
+            },
+            {
+               id: "d8ea4595-b559-4450-8907-64972eefd0c3",
+               name: "OP-20",
+               points: [
+                  [
+                     377,
+                     325
+                  ],
+                  [
+                     430,
+                     325
+                  ],
+                  [
+                     430,
+                     380
+                  ],
+                  [
+                     377,
+                     380
+                  ]
+               ]
+            },
+            {
+               id: "35440417-36e4-43ff-b49e-ad7cdf226b02",
+               name: "OP-30",
+               points: [
+                  [
+                     452,
+                     324
+                  ],
+                  [
+                     506,
+                     324
+                  ],
+                  [
+                     506,
+                     380
+                  ],
+                  [
+                     452,
+                     380
+                  ]
+               ]
+            },
+            {
+               id: "15cd1bda-e7c9-4d1b-8867-f36c3767ca17",
+               name: "OP-70",
+               points: [
+                  [
+                     534,
+                     326
+                  ],
+                  [
+                     587,
+                     326
+                  ],
+                  [
+                     587,
+                     380
+                  ],
+                  [
+                     534,
+                     380
+                  ]
+               ]
+            },
+            {
+               id: "428ed7a1-b998-4253-9434-59c0d4d68608",
+               name: "OP-10",
+               points: [
+                  [
+                     571,
+                     84
+                  ],
+                  [
+                     623,
+                     84
+                  ],
+                  [
+                     623,
+                     139
+                  ],
+                  [
+                     571,
+                     139
+                  ]
+               ]
+            },
+            {
+               id: "308639ee-527a-4341-b4e8-eea515c85222",
+               name: "BAY 2",
+               points: [
+                  [
+                     660,
+                     84
+                  ],
+                  [
+                     712,
+                     84
+                  ],
+                  [
+                     712,
+                     137
+                  ],
+                  [
+                     660,
+                     137
+                  ]
+               ]
+            },
+            {
+               id: "f21cdce6-13de-4073-9dae-e104db2a6213",
+               name: "BAY 7",
+               points: [
+                  [
+                     730,
+                     84
+                  ],
+                  [
+                     780,
+                     84
+                  ],
+                  [
+                     780,
+                     137
+                  ],
+                  [
+                     730,
+                     137
+                  ]
+               ]
             }
-        ],
-        sensors: [{
-            id: uuid(),
-            name: "Sensor - 0",
-            url: "images/bluetooth_logo.png",
-            x: 50,
-            y: 50,
-            w: width,
-            h: height
-        }]
-    }, {
-        id: uuid(),
-        name: "Floor 2",
-        image: {
-            url: "images/sample_floorplan.png",
-            x: 0,
-            y: 0,
-            w: width,
-            h: height
-        },
-        zones: [],
-        sensors: [{
-            id: uuid(),
-            name: "Sensor - 1",
-            url: "images/bluetooth_logo.png",
-            x: 50,
-            y: 50,
-            w: width,
-            h: height
-        }]
-    }]
+         ],
+         "sensors": []
+      }
+   ]
 };
 
 // Load Floor image layers
