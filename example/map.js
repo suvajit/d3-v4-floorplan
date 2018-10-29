@@ -1,3 +1,12 @@
+// Chamber view and create zone mode switcher functionality
+$(document).ready(function(){
+    $("#viewchamber").click(function(){ 
+        $(this).text($(this).text() === 'Edit zones' ? 'view chambers' : 'Edit zones');
+        $(".chamber").toggle();
+        $(".zone-btn").toggle();
+    });
+});
+
 var alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
 
 var svg = d3.select(".zone"),
@@ -275,8 +284,8 @@ data.map((data) => {
     {
         const rectwidth = element.points[1][0] - element.points[0][0];
         const rectheight = element.points[3][1] - element.points[0][1];
-        const rectX = element.points[0][0];
-        const rectY = element.points[0][1];
+        const rectX = element.points[0][0]-5;
+        const rectY = element.points[0][1]-12;
         createrect.drawchamber(svg1,[data],rectwidth,rectheight,rectX,rectY);
     }  
   });

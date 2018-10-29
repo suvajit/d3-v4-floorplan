@@ -7,6 +7,10 @@
   <link rel="stylesheet" href="d3-context-menu/d3-context-menu.css">
   <!--JQUERY-->
   <script src="jquery/jquery-3.1.1.min.js"></script>
+  <!--Bootstrap-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
   <!--Pretty Print JS-->
   <script src="prettyprint/prettyprint.js"></script>
   <!--D3.JS-->
@@ -32,26 +36,38 @@
       top: 0;
       left: 0;
     }
-
+    .zone-btn{
+      display: none;
+    }
+    #viewchamber:visited{
+      border: none;
+    }
+    #viewchamber:active{
+      border: none;
+    }
   </style>
+  <script>
+  </script>
 </head>
 <body>
 <h2> Floor Map </h2>
-<button id='poly'>Create Zone</button>
-<button id='sensor'>Place sensor</button>
-<button id='deletePoly'>Save zones</button>
+<button id='viewchamber' type="button" class="btn">Edit zones</button>
+<button id='poly' class="btn zone-btn">Create Zone</button>
+<button id='sensor' class="btn zone-btn">Place sensor</button>
+<button id='deletePoly' class="btn zone-btn">Save zones</button>
 <br/>
 <div class="svgwrapper">
-<svg class="zone abc" width="960" height="500"></svg>
-<svg class="chamber abc" width="960" height="500"></svg>
+<svg class="zone abc" width="calc(100%)" height="500"></svg>
+<svg class="chamber abc" width="calc(100%)" height="500">
+</svg>
 </div>
-<br>
+<!-- <br>
 <div class="jsonwrapper">
 <hr>
 <h2> JSON Map Data </h2>
 <button id='updateMapData'>Update</button>
 <pre><code id=mapdata></code></pre>
-</div>
+</div> -->
 <script type="text/javascript" src="map.js"></script>
 </body>
 </html>
