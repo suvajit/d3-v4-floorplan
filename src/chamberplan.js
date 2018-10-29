@@ -13,14 +13,27 @@ d3.floorplan.chamberplan = function() {
             var y =ry;
 
 
-            svg1 //Binding the DOM SVG Element with d3
+       const abc =     svg1 //Binding the DOM SVG Element with d3
                 .data(data)   //Binding the {data}
                 .append("g")  //To keep multiple parts in one group
                 .attr("width","auto")
                 .attr("height","auto")
 
+            abc
+                .append("rect")  //Adding Rectangle which displays the {color} and {build percentage(%)}
+                .style("fill",function (d){ return d[1]})
+                .style("fill-opacity",.35)
+                .attr("x",x) //Getting X coordinates from Json
+                .attr("y",y) //Getting Y coordinates from Json
+                .attr("width",width+3)
+                .attr("height",height+3)
+            // abc
+            //     .append("text")
+            //     .attr("x",x)
+            //     .attr("y",y+height+10)
+            //     .text("abc")
             //Rectangle 1
-            svg1
+            abc
                 .append("rect")  //Adding Rectangle which displays the {color} and {build percentage(%)}
                 .style("fill",function (d){ return d[1]})
                 .attr("x",x) //Getting X coordinates from Json
@@ -29,7 +42,7 @@ d3.floorplan.chamberplan = function() {
                 .attr("height",height-height/4)
 
 
-            svg1 // Adding a text to display the build percentage in Rectangle 1
+            abc // Adding a text to display the build percentage in Rectangle 1
                 .append("text")
                 .attr("x",x+(width/3))
                 .attr("y",y+(height/2))
@@ -37,7 +50,7 @@ d3.floorplan.chamberplan = function() {
                 .text(function (d){ return d[0]+"%"})
 
             //Rectangle 2
-            svg1
+            abc
                 .append("rect") //Adding  Rectangle which displays the {Chamber number}
                 .style("fill","yellow")
                 .attr("x",x)
@@ -45,12 +58,13 @@ d3.floorplan.chamberplan = function() {
                 .attr("width",width)
                 .attr("height",height/4)
 
-            svg1
+            abc
                 .append("text") // Adding  text to display the {chamber Number}  in Rectangle 2
                 .attr("x",x+(width/3))
                 .attr("y",y+(height-height/4)+10)
-                .text(function (d){return d[2]})
+                .text(function (d){ return d[2]})
                 .attr("font-size","9px")
+            
 
             }
     return createrect;

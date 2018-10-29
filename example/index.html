@@ -32,26 +32,29 @@
       top: 0;
       left: 0;
     }
-
   </style>
+  <script>
+  </script>
 </head>
 <body>
 <h2> Floor Map </h2>
 <button id='poly'>Create Zone</button>
 <button id='sensor'>Place sensor</button>
 <button id='deletePoly'>Save zones</button>
+<button id='viewchamber' type="button">Edit zones</button>
 <br/>
 <div class="svgwrapper">
 <svg class="zone abc" width="960" height="500"></svg>
-<svg class="chamber abc" width="960" height="500"></svg>
+<svg class="chamber abc" width="960" height="500">
+</svg>
 </div>
-<br>
+<!-- <br>
 <div class="jsonwrapper">
 <hr>
 <h2> JSON Map Data </h2>
 <button id='updateMapData'>Update</button>
 <pre><code id=mapdata></code></pre>
-</div>
+</div> -->
 <script type="text/javascript" src="map.js"></script>
 </body>
 </html>
