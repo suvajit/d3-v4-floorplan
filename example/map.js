@@ -1,8 +1,9 @@
 // Chamber view and create zone mode switcher functionality
 $(document).ready(function(){
-    $("#viewchamber").click(function(){
+    $("#viewchamber").click(function(){ 
         $(this).text($(this).text() === 'Edit zones' ? 'view chambers' : 'Edit zones');
         $(".chamber").toggle();
+        $(".zone-btn").toggle();
     });
 });
 
