@@ -10,13 +10,13 @@ d3.floorplan.chamberplan = function() {
         var height = rh;
         var x = rx;
         var y =ry;
-
-
        const abc = svg1 //Binding the DOM SVG Element with d3
                     .data(data)   //Binding the {data}
                     .append("g")  //To keep multiple parts in one group
                     .attr("width","auto")
                     .attr("height","auto")
+                    .attr("class","chamber-g")
+                    
 
             abc
                 .append("rect")  //Adding Rectangle which displays the {color} and {build percentage(%)}
@@ -74,6 +74,11 @@ d3.floorplan.chamberplan = function() {
             ]
                 abc.on('contextmenu', d3.contextMenu(menu));
             }
+    createrect.update = function(){
+        var svg = d3.select("body").transition();
+
+        svg.select()
+    }
     return createrect;
 };
 
