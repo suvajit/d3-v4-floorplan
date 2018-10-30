@@ -4,7 +4,27 @@ $(document).ready(function(){
         $(this).text($(this).text() === 'Edit zones' ? 'view chambers' : 'Edit zones');
         $(".chamber").toggle();
         $(".zone-btn").toggle();
+        $("#myDropdown").toggle();
     });
+
+    $('.layer-select-image').click(function(){
+      if($(this).is(":checked")){
+        $(".image-layer").css("visibility", "visible");
+            }
+            if($(this).is(":not(:checked)")){
+              $(".image-layer").css("visibility", "hidden");
+            }
+        });
+        $('.layer-select-zone').click(function(){
+            if($(this).is(":not(:checked)")){
+              $(".polygon").css("visibility", "hidden");
+            }
+        });
+        $('.layer-select-chamber').click(function(){
+            if($(this).is(":not(:checked)")){
+              $(".chamber").css("visibility", "hidden");
+            }
+        });
 });
 
 var alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
@@ -282,9 +302,9 @@ data.map((data) => {
     mapdata.floors[0].zones.find(function(element) {
     if(element.id==data[3])
     {
-        const rectwidth = element.points[1][0] - element.points[0][0];
+        const rectwidth = element.points[1][0] - element.points[0][0]-10;
         const rectheight = element.points[3][1] - element.points[0][1];
-        const rectX = element.points[0][0]-5;
+        const rectX = element.points[0][0]+5;
         const rectY = element.points[0][1]-12;
         createrect.drawchamber(svg1,[data],rectwidth,rectheight,rectX,rectY);
     }  

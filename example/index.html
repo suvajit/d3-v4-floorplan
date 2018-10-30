@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>D3 V4 - floorplan example</title>
+  <title>Floor plan</title>
   <!--Pretty print CSS-->
   <link rel="stylesheet" href="prettyprint/prettyprint.css">
   <!--D3 Context Menu CSS-->
@@ -45,16 +45,39 @@
     #viewchamber:active{
       border: none;
     }
+    /* .image-layer{
+      display: none;
+    } */
+    /* .polygon{
+      display: none;
+    } */
   </style>
   <script>
+    
   </script>
 </head>
 <body>
-<h2> Floor Map </h2>
+<h2> Floor plan </h2>
 <button id='viewchamber' type="button" class="btn">Edit zones</button>
 <button id='poly' class="btn zone-btn">Create Zone</button>
 <button id='sensor' class="btn zone-btn">Place sensor</button>
 <button id='deletePoly' class="btn zone-btn">Save zones</button>
+<div id="myDropdown" class="btn-group">
+  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Layer selection
+  </button>
+  <div class="dropdown-menu">
+    <div class="checkbox">
+      <label><input type="checkbox" value="1" class="layer-select-image" checked>Image Layer</label>
+    </div>
+    <div class="checkbox">
+      <label><input type="checkbox" value="2" class="layer-select-zone" checked>Zones Layer</label>
+    </div>
+    <div class="checkbox disabled">
+      <label><input type="checkbox" value="3" class="layer-select-chamber" checked>Chambers Layer</label>
+    </div>
+  </div>
+</div>
 <br/>
 <div class="svgwrapper">
 <svg class="zone abc" width="calc(100%)" height="500"></svg>

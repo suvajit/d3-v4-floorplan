@@ -66,8 +66,8 @@ d3.floorplan = function () {
     };
 
     map.addLayer = function (layer, index) {
-        layer.xScale(xScale);
-        layer.yScale(yScale);
+        // layer.xScale(xScale);
+        // layer.yScale(yScale);
 
         if (arguments.length > 1 && index >= 0) {
             layers.splice(index, 0, layer);
@@ -87,6 +87,7 @@ d3.floorplan = function () {
             .attr("class", function (floor) {
                 return "floor-" + floor.id;
             })
+            .attr("class","image-layer")
             .append("image");
 
         images.attr("xlink:href", function (floor) {

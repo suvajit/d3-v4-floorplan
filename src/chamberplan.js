@@ -25,8 +25,8 @@ d3.floorplan.chamberplan = function() {
                 .style("fill-opacity",.35)
                 .attr("x",x) //Getting X coordinates from Json
                 .attr("y",y) //Getting Y coordinates from Json
-                .attr("width",width+3)
-                .attr("height",height+3)
+                .attr("width",width+2)
+                .attr("height",height+2)
             //Rectangle 1
             abc
                 .append("rect")  //Adding Rectangle which displays the {color} and {build percentage(%)}
@@ -39,7 +39,7 @@ d3.floorplan.chamberplan = function() {
 
             abc // Adding a text to display the build percentage in Rectangle 1
                 .append("text")
-                .attr("x",x+(width/3))
+                .attr("x",x+(width/4))
                 .attr("y",y+(height/2))
                 .attr("font-size","15px")
                 .text(function (d){ return d[0]+"%"})
@@ -55,12 +55,25 @@ d3.floorplan.chamberplan = function() {
 
             abc
                 .append("text") // Adding  text to display the {chamber Number}  in Rectangle 2
-                .attr("x",x+(width/3))
+                .attr("x",x+(width/4))
                 .attr("y",y+(height-height/4)+10)
                 .text(function (d){ return d[2]})
                 .attr("font-size","11px")
-            
-
+            var menu = [
+                {
+                    title: 'option 1',
+                    action: function (elm, d, i) {
+                        alert("you have clicked option 1");
+                    }
+                },
+                {
+                    title: 'option 2',
+                    action: function (elm, d, i) {
+                        alert("you have clicked option 2");
+                    }
+                }
+            ]
+                abc.on('contextmenu', d3.contextMenu(menu));
             }
     return createrect;
 };
