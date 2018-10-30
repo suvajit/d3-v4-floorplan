@@ -24,37 +24,6 @@
   <!--Uncomment for debugging-->
   <!-- <script src="../src/floorplan.js"></script>
   <script src="../src/chamberplan.js"></script> -->
-  <style>
-    .svgwrapper{
-      position: relative;
-    }
-    .jsonwrapper{
-      margin-top: 500px;
-    }
-    .abc{
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-    .zone-btn{
-      display: none;
-    }
-    #viewchamber:visited{
-      border: none;
-    }
-    #viewchamber:active{
-      border: none;
-    }
-    /* .image-layer{
-      display: none;
-    } */
-    /* .polygon{
-      display: none;
-    } */
-  </style>
-  <script>
-    
-  </script>
 </head>
 <body>
 <h2> Floor plan </h2>
@@ -63,19 +32,30 @@
 <button id='sensor' class="btn zone-btn">Place sensor</button>
 <button id='deletePoly' class="btn zone-btn">Save zones</button>
 <div id="myDropdown" class="btn-group">
-  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Layer selection
-  </button>
-  <div class="dropdown-menu">
-    <div class="checkbox">
-      <label><input type="checkbox" value="1" class="layer-select-image" checked>Image Layer</label>
-    </div>
-    <div class="checkbox">
-      <label><input type="checkbox" value="2" class="layer-select-zone" checked>Zones Layer</label>
-    </div>
-    <div class="checkbox disabled">
-      <label><input type="checkbox" value="3" class="layer-select-chamber" checked>Chambers Layer</label>
-    </div>
+<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Layer Control <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+               <li>
+                   <label class="dropdown-menu-item checkbox">
+                       <input type="checkbox" class="layer-select-image" checked />
+                       <!-- <span class="glyphicon glyphicon-unchecked"></span> -->
+                       Floor Plan
+                   </label>
+               </li>
+               <li>
+                   <label class="dropdown-menu-item checkbox">
+                       <input type="checkbox" class="layer-select-zone" checked/>
+                       <!-- <span class="glyphicon glyphicon-unchecked"></span> -->
+                       Zones
+                   </label>
+               </li>
+               <li>
+                   <label class="dropdown-menu-item checkbox">
+                       <input type="checkbox" class="layer-select-chamber" checked/>
+                       <!-- <span class="glyphicon glyphicon-unchecked"></span> -->
+                       Chambers
+                   </label>
+               </li> 
+            </ul>
   </div>
 </div>
 <br/>
