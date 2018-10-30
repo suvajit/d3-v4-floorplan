@@ -31,6 +31,9 @@ $(document).ready(function(){
               $(".chamber").css("visibility", "hidden");
             }
         });
+        $('.dropdown-menu').on('click', function(e) {
+            e.stopPropagation();
+          });
 });
 
 var alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
