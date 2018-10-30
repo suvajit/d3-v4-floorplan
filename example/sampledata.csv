@@ -1,0 +1,5 @@
+timestamp,chamber_id,current_loc,previous_loc,build,part_shortage
+,C001,3e2dca8f-d64a-48f2-b525-30184a183323,53e86fca-ea98-490c-aca1-5747d7cbc9f7,30,red
+,C002,53e86fca-ea98-490c-aca1-5747d7cbc9f7,e98439ee-ba4a-4a39-865c-09db0badf045,45,green
+,C003,e98439ee-ba4a-4a39-865c-09db0badf045,772bb692-c84e-47c7-98d2-cdc35639ba54,60,green
+,C004,772bb692-c84e-47c7-98d2-cdc35639ba54,,14,green

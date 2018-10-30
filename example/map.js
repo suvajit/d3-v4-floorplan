@@ -35,7 +35,7 @@ $(document).ready(function(){
             e.stopPropagation();
           });
 });
-
+var dataCSV = [];
 var alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
 
 var svg = d3.select(".zone"),
@@ -44,15 +44,14 @@ var svg = d3.select(".zone"),
     g = svg.append("g").attr("transform", "translate(32," + (height / 2) + ")"),
     map = d3.floorplan(); // initialize floor plan
 
+// console.log(dataCSV);
 
-const svg1 = d3.select(".chamber"),
-            createrect= d3.floorplan.chamberplan();
-var data = [
-    [30,"red","c001","3e2dca8f-d64a-48f2-b525-30184a183323"],
-    [45,"green","c002","53e86fca-ea98-490c-aca1-5747d7cbc9f7"],
-    [60,"green","c003","e98439ee-ba4a-4a39-865c-09db0badf045"],
-    [14,"green","c004","772bb692-c84e-47c7-98d2-cdc35639ba54"]
-];
+// var data = [
+//     [30,"red","c001","3e2dca8f-d64a-48f2-b525-30184a183323"],
+//     [45,"green","c002","53e86fca-ea98-490c-aca1-5747d7cbc9f7"],
+//     [60,"green","c003","e98439ee-ba4a-4a39-865c-09db0badf045"],
+//     [14,"green","c004","772bb692-c84e-47c7-98d2-cdc35639ba54"]
+// ];
 // Set data
 var mapdata = {
    floors: [
@@ -306,20 +305,23 @@ var mapdata = {
       }
    ]
 };
-
-data.map((data) => {
-    mapdata.floors[0].zones.find(function(element) {
-    if(element.id==data[3])
-    {
-        const rectwidth = element.points[1][0] - element.points[0][0]-10;
-        const rectheight = element.points[3][1] - element.points[0][1];
-        const rectX = element.points[0][0]+5;
-        const rectY = element.points[0][1]-12;
-        createrect.drawchamber(svg1,[data],rectwidth,rectheight,rectX,rectY);
-    }  
-  });
-}
-)
+const svg1 = d3.select(".chamber"),
+            createrect= d3.floorplan.chamberplan();
+            
+d3.csv("sampledata.csv", function(data){
+    data.map((data)=>{
+        mapdata.floors[0].zones.find(function(element) {
+            if(element.id==data.current_loc)
+            {
+                const rectwidth = element.points[1][0] - element.points[0][0]-10;
+                const rectheight = element.points[3][1] - element.points[0][1];
+                const rectX = element.points[0][0]+5;
+                const rectY = element.points[0][1]-12;
+                createrect.drawchamber(svg1,[data],rectwidth,rectheight,rectX,rectY);
+            }  
+          });
+    })
+});
 
 // Load Floor image layers
 map.imageLayers(svg, mapdata.floors);
