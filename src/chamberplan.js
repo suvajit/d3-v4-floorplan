@@ -6,11 +6,10 @@ d3.floorplan.chamberplan = function() {
         }
 
     createrect.drawchamber = function(svg1,data,rw,rh,rx,ry) {
-
-            var width = rw;
-            var height = rh;
-            var x = rx;
-            var y =ry;
+        var width = rw;
+        var height = rh;
+        var x = rx;
+        var y =ry;
 
 
        const abc = svg1 //Binding the DOM SVG Element with d3
@@ -21,7 +20,7 @@ d3.floorplan.chamberplan = function() {
 
             abc
                 .append("rect")  //Adding Rectangle which displays the {color} and {build percentage(%)}
-                .style("fill",function (d){ return d[1]})
+                .style("fill",function (d){ return d.part_shortage})
                 .style("fill-opacity",.35)
                 .attr("x",x) //Getting X coordinates from Json
                 .attr("y",y) //Getting Y coordinates from Json
@@ -30,7 +29,7 @@ d3.floorplan.chamberplan = function() {
             //Rectangle 1
             abc
                 .append("rect")  //Adding Rectangle which displays the {color} and {build percentage(%)}
-                .style("fill",function (d){ return d[1]})
+                .style("fill",function (d){return d.part_shortage})
                 .attr("x",x) //Getting X coordinates from Json
                 .attr("y",y) //Getting Y coordinates from Json
                 .attr("width",width)
@@ -42,7 +41,7 @@ d3.floorplan.chamberplan = function() {
                 .attr("x",x+(width/4))
                 .attr("y",y+(height/2))
                 .attr("font-size","15px")
-                .text(function (d){ return d[0]+"%"})
+                .text(function (d){ return d.build+"%"})
 
             //Rectangle 2
             abc
@@ -57,7 +56,7 @@ d3.floorplan.chamberplan = function() {
                 .append("text") // Adding  text to display the {chamber Number}  in Rectangle 2
                 .attr("x",x+(width/4))
                 .attr("y",y+(height-height/4)+10)
-                .text(function (d){ return d[2]})
+                .text(function (d){ return d.chamber_id})
                 .attr("font-size","11px")
             var menu = [
                 {
