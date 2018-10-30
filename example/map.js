@@ -11,20 +11,29 @@ $(document).ready(function(){
       if($(this).is(":checked")){
         $(".image-layer").css("visibility", "visible");
             }
-            if($(this).is(":not(:checked)")){
+            else if($(this).is(":not(:checked)")){
               $(".image-layer").css("visibility", "hidden");
             }
         });
         $('.layer-select-zone').click(function(){
-            if($(this).is(":not(:checked)")){
+            if($(this).is(":checked")){
+                $(".polygon").css("visibility", "visible");
+                    }
+        else if($(this).is(":not(:checked)")){
               $(".polygon").css("visibility", "hidden");
             }
         });
         $('.layer-select-chamber').click(function(){
-            if($(this).is(":not(:checked)")){
+            if($(this).is(":checked")){
+                $(".chamber").css("visibility", "visible");
+                    }
+            else if($(this).is(":not(:checked)")){
               $(".chamber").css("visibility", "hidden");
             }
         });
+        $('.dropdown-menu').on('click', function(e) {
+            e.stopPropagation();
+          });
 });
 
 var alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
