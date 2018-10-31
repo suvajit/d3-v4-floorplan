@@ -5,6 +5,7 @@ $(document).ready(function(){
         $(".chamber").toggle();
         $(".zone-btn").toggle();
         $("#myDropdown").toggle();
+        $(".form-control").toggle();
     });
 
     $('.layer-select-image').click(function(){
@@ -307,7 +308,6 @@ var mapdata = {
 };
 const svg1 = d3.select(".chamber"),
             createrect= d3.floorplan.chamberplan();
-            
 d3.csv("sampledata.csv", function(data){
     data.map((data)=>{
         mapdata.floors[0].zones.find(function(element) {
@@ -399,7 +399,28 @@ function uuid() {
     }
     return uuid;
 }
-
+function myFunction(){
+    d3.selectAll(".chamber-g").remove();
+var fileReader = new FileReader();
+fileReader.onload = function () {
+  var data = fileReader.result;
+  d3.csvParse(data,function (data){
+    // console.log(mapdata);
+    // createrect.drawchamber(svg1,[data],rectwidth,rectheight,rectX,rectY);
+    mapdata.floors[0].zones.find(function(element) {
+        if(element.id==data.current_loc)
+        {
+            const rectwidth = element.points[1][0] - element.points[0][0]-10;
+            const rectheight = element.points[3][1] - element.points[0][1];
+            const rectX = element.points[0][0]+5;
+            const rectY = element.points[0][1]-12;
+            createrect.drawchamber(svg1,[data],rectwidth,rectheight,rectX,rectY);
+        }  
+      });
+  });  // data <-- in this var you have the file data in Base64 format
+};
+fileReader.readAsText($('#fol').prop('files')[0]);
+}
 
 // Uncomment for testing
 // Draw text
